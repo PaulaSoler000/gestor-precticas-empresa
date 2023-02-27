@@ -265,7 +265,7 @@ nav .profile-details i{
 }
 
 .home-content .sales-boxes .recent-sales{
-  width: 65%;
+  width: 85%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px;
@@ -619,8 +619,8 @@ table tr:nth-child(2n+1){
 }
 
 .contenedor .div-formulario {
-  width: 20%;
-  height: 280px;
+  width: 30%;
+  height: 350px;
   margin: 120px 15px;
   background-color: rgb(238, 181, 230);
   display: flex;
