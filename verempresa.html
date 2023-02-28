@@ -69,14 +69,35 @@
             <div id="wrapper">
                 <h1>Empresas</h1>
                     <table id="data_table">
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                            <th>Responsable</th>
-                            <th>Observaciones</th>
-                            <th><a href="AsignarAlumnos.html"><input type="button" class="add"value="Asignar Alumnos" ></a></th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Email</th>
+                                <th>Responsable</th>
+                                <th>Observaciones</th>
+                                <th><a href="AsignarAlumnos.html"><input type="button" class="add"value="Asignar Alumnos" ></a></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <template id="fila2">
+                            <tr id="fila2">
+                                <td scope="row" class="nombre"></td>
+                                <td class="nombre"></td>
+                                <td class="tef"></td>
+                                <td class="email"></td>
+                                <td class="responsable"></td>
+                                <td class="observaciones"></td>
+                                <td>
+                                    <button type="button" id="edit_button1" value="Edit" onclick="edit_row(no)"class="btn btn-link"><i class="bi bi-pencil"></i></button>
+                                    <button type="button" id="save_button1" value="Save"  onclick="save_row(no)" class="btn btn-link"><i class="bi bi-save"></i></button>
+                                    <button type="button" value="Delete"  onclick="delete_row(no)" class="btn btn-link"><i class="bi bi-trash"></i></button>
+                                    <button class="btn bg-danger btn-sm btnBorrar" data-pos="" type="button">&times;</button>
+                                </td>
+                            </tr>
+                            </template>
+                        </tbody>
             
                         <tr id="row1">
                             <td id="date_row1">Oracle</td>
@@ -104,21 +125,7 @@
             
                             </td>
                         </tr>
-                        <tr id="row3">
-                            <td id="date_row3">INERTTIA</td>
-                            <td id="pract_row3">123456789</td>
-                            <td id="hour_row3">loquesea@gmail.com</td>
-                            <td id="act_row3">Marco</td>
-                            <td id="obser_row3">Buena empresa</td>
-                            <td>
-                                    <button type="button" id="edit_button3" value="Edit" onclick="edit_row('3')"class="btn btn-link"><i class="bi bi-pencil"></i></button>
-                                    <button type="button" id="save_button3" value="Save"  onclick="save_row('3')" class="btn btn-link"><i class="bi bi-save"></i></button>
-                                    <button type="button" value="Delete"  onclick="delete_row('3')" class="btn btn-link"><i class="bi bi-trash"></i></button>
-            
-                            </td>
-                        </tr>
-                            </td>
-                        </tr>
+                        
                    
                     </table>
             
