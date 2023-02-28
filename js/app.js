@@ -1,4 +1,10 @@
 /*Login*/
+
+var actividades = []
+
+
+
+
 // Clickear en Profesor o alumno para cambiar y ver el efecto
     function cambiar_login() {
         document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
@@ -98,14 +104,14 @@
     }
 
     //Event Listeners
-    form.addEventListener('submit',function(e) {
-        //e.preventDefault();
-        checkRequired([email, password]);
-        checkLength(password,6,25);
-        checkEmail(email);
-        checkPasswordMatch(password);
-        window.open('../listadoprofesor.html');
-    });
+    // form.addEventListener('submit',function(e) {
+    //     e.preventDefault();
+    //     checkRequired([email, password]);
+    //     checkLength(password,6,25);
+    //     checkEmail(email);
+    //     checkPasswordMatch(password);
+    //     window.open('../listadoprofesor.html');
+    // });
 
 //Validación del formulario alumnos
     const form1 = document.getElementById('form1');
@@ -272,7 +278,7 @@ const apellidoImput=document.querySelector('#apellido');
 const idImput=document.querySelector('#dni');
 const btnAgregar=document.querySelector('#btnAgregar');
 
-formulario.addEventListener('submit',validarFormulario); 
+// formulario.addEventListener('guardar',validarFormulario); 
 
 function validarFormulario(e){ // 
     e.preventDefault(); // para q no se ejecute de forma automatica
@@ -295,14 +301,56 @@ function validarFormulario(e){ //
     }
 }
 
-function agregarAlumno(){
+//añadir ficha
+var plantilla = document.querySelector("template")
+var tabla = document.querySelector("tbody")
 
-    listaAlumnos.push({...objAlumno}); // para copiar el objeto Alumno
-    mostrarAlumnos();
-    formulario.reset(); //limpia los imputs
-    limpiarObjeto();
-   
-    }
+function getActividad(){
+
+    return {
+        fecha : document.querySelector("input#fecha").value,
+        dual : document.querySelector("select#tipoPracticas").value,
+        horas : document.querySelector("input#horasRealizadas").value,
+        actividad : document.querySelector("input#Actividad").value,  
+        observaciones : document.querySelector("textarea#comment").value, 
+      }
+}
+
+function agregarActividad(actividad,pos){
+    let nuevaFila = plantilla.content.cloneNode(true)
+    nuevaFila.querySelector(".fecha").textContent = actividad.fecha
+    nuevaFila.querySelector(".dual").textContent = actividad.dual
+    nuevaFila.querySelector(".horas").textContent = actividad.horas
+    nuevaFila.querySelector(".actividad").textContent = actividad.actividad
+    nuevaFila.querySelector(".observaciones").textContent = actividad.observaciones
+    nuevaFila.querySelector("button.btnBorrar").dataset.pos = pos
+    nuevaFila.querySelector("button.btnBorrar").addEventListener("click",borrar)
+ 
+    ev.preventDefault()
+    let actividades = getActividad()
+    actividades.push(actividad)
+    agregarActividad(actividad, actividades.length-1)
+
+
+    tabla.appendChild(nuevaFila)
+  document.querySelector("form").reset()
+    
+}
+    
+
+
+document.querySelector("form").addEventListener("submit",
+  (ev)=>{
+
+    console.log(getActividad())
+    ev.preventDefault()
+    actividades.forEach( (a,pos)=>{
+        agregarActividad( a , pos)
+      })
+    
+  }
+)
+
     function limpiarObjeto(){ // limpia formulario 
         objAlumno.id='';
         objAlumno.nombre='';
