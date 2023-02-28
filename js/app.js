@@ -94,18 +94,14 @@
 
     //get FieldName
     function getFieldName(input) {
-        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+        fetch("C:\Users\paula\OneDrive\Documentos\GitHub\gestor-precticas-empresa\alumnos.json")
+        .then(response => response.json())
+        .then(jsonObject => {
+            if(input === jsonObject.correo) {
+                const idusuario = jsonObject.id;
+            }
+        })
     }
-
-    //Event Listeners
-    // form.addEventListener('submit',function(e) {
-    //     e.preventDefault();
-    //     checkRequired([email, password]);
-    //     checkLength(password,6,25);
-    //     checkEmail(email);
-    //     checkPasswordMatch(password);
-    //     window.open('../listadoprofesor.html');
-    // });
 
 //Validación del formulario alumnos
     const form1 = document.getElementById('form1');
