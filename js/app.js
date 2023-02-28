@@ -1,10 +1,4 @@
 /*Login*/
-
-var actividades = []
-
-
-
-
 // Clickear en Profesor o alumno para cambiar y ver el efecto
     function cambiar_login() {
         document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
@@ -301,9 +295,10 @@ function validarFormulario(e){ //
     }
 }
 
-//añadir ficha
+//añadir actividad
 var plantilla = document.querySelector("template")
 var tabla = document.querySelector("tbody")
+
 
 function getActividad(){
 
@@ -316,21 +311,32 @@ function getActividad(){
       }
 }
 
-function agregarActividad(actividad,pos){
+function agregarActividad(actividad){
+    
+    
     let nuevaFila = plantilla.content.cloneNode(true)
+
+   
     nuevaFila.querySelector(".fecha").textContent = actividad.fecha
     nuevaFila.querySelector(".dual").textContent = actividad.dual
     nuevaFila.querySelector(".horas").textContent = actividad.horas
     nuevaFila.querySelector(".actividad").textContent = actividad.actividad
     nuevaFila.querySelector(".observaciones").textContent = actividad.observaciones
-    nuevaFila.querySelector("button.btnBorrar").dataset.pos = pos
-    nuevaFila.querySelector("button.btnBorrar").addEventListener("click",borrar)
- 
-    ev.preventDefault()
-    let actividades = getActividad()
-    actividades.push(actividad)
-    agregarActividad(actividad, actividades.length-1)
 
+    var editbtn = document.createElement("button")
+    editbtn.className = "btn btn-link" + "bi bi-pencil"
+
+    var delbtn = document.createElement("button")
+    delbtn.className="btn btn-link" + "bi bi-trash"
+    delbtn.setAttribute("data-id","boton-2")
+
+    delbtn.addEventListener("click",function(event){
+        var fila = event.target.parentElement.parentElement;
+        fila.parentElement.removeChild(fila);
+    })
+
+    nuevaFila.querySelector(".botones").appendChild(editbtn)
+    nuevaFila.querySelector(".botones").appendChild(delbtn)
 
     tabla.appendChild(nuevaFila)
   document.querySelector("form").reset()
@@ -342,14 +348,14 @@ function agregarActividad(actividad,pos){
 document.querySelector("form").addEventListener("submit",
   (ev)=>{
 
-    console.log(getActividad())
+
     ev.preventDefault()
-    actividades.forEach( (a,pos)=>{
-        agregarActividad( a , pos)
+
+        agregarActividad( getActividad())
       })
     
-  }
-)
+  
+
 
     function limpiarObjeto(){ // limpia formulario 
         objAlumno.id='';
