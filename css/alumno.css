@@ -288,6 +288,7 @@ nav .profile-details i{
 .sales-boxes .sales-details li{
   list-style: none;
   margin: 8px 0;
+  text-align: center;
 }
 .sales-boxes .sales-details li a{
   font-size: 18px;
