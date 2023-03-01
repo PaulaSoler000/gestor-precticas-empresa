@@ -322,6 +322,7 @@ function agregarActividad(actividad){
     var editbtn = document.createElement("button")
     editbtn.className = "btn btn-link" + "bi bi-pencil"
 
+
     var delbtn = document.createElement("button")
     delbtn.className="btn btn-link" + "bi bi-trash"
     delbtn.setAttribute("data-id","boton-2")
@@ -333,13 +334,18 @@ function agregarActividad(actividad){
 
     nuevaFila.querySelector(".botones").appendChild(editbtn)
     nuevaFila.querySelector(".botones").appendChild(delbtn)
-
+    
     tabla.appendChild(nuevaFila)
   document.querySelector("form").reset()
     
 }
-    
+const formtabla = document.getElementById("data_table");
+console.log(formtabla);
 
+formtabla.addEventListener("submit",function(event){
+    console.log(event);
+        alert("Se detectó un envío del formulario.")
+})
 
 document.querySelector("form").addEventListener("submit",
   (ev)=>{
@@ -388,6 +394,33 @@ function mostrarAlumnos(){
     });
 }
 
+function editarContenido(){
+    document.getElementById("cambiarDatosFecha").setAttribute("contenteditable", "true");
+    document.getElementById("cambiarDatosDual").setAttribute("contenteditable", "true");
+    document.getElementById("cambiarDatosHoras").setAttribute("contenteditable", "true");
+    document.getElementById("cambiarDatosAct").setAttribute("contenteditable", "true");
+    document.getElementById("cambiarDatosObs").setAttribute("contenteditable", "true");
+
+    document.getElementById("cambiarDatosFecha").style.color = "red";
+    document.getElementById("cambiarDatosDual").style.color = "red";
+    document.getElementById("cambiarDatosHoras").style.color = "red";
+    document.getElementById("cambiarDatosAct").style.color = "red";
+    document.getElementById("cambiarDatosObs").style.color = "red";
+}
+
+function confirmarContenido(){
+    document.getElementById("cambiarDatosFecha").setAttribute("contenteditable", "false");
+    document.getElementById("cambiarDatosDual").setAttribute("contenteditable", "false");
+    document.getElementById("cambiarDatosHoras").setAttribute("contenteditable", "false");
+    document.getElementById("cambiarDatosAct").setAttribute("contenteditable", "false");
+    document.getElementById("cambiarDatosObs").setAttribute("contenteditable", "false");
+
+    document.getElementById("cambiarDatosFecha").style.color = "black";
+    document.getElementById("cambiarDatosDual").style.color = "black";
+    document.getElementById("cambiarDatosHoras").style.color = "black";
+    document.getElementById("cambiarDatosAct").style.color = "black";
+    document.getElementById("cambiarDatosObs").style.color = "black";
+}
 
 
 function cargarAlumno(alumno){
@@ -431,4 +464,5 @@ function limpiarHTML(){
         divAlumnos.removeChild(divAlumnos.firstChild); // mientras el contenedor tenga hijos los va a ir eliminando de 1 en 1 
     }
 }
+
 /*Añadir alumno a profesor*/
