@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "oracle",
+        "telefono": "12345",
+        "email":"oracle@cesurformacion.com",
+        "responsable": "cristina",
+        "observaciones": "buena empresa"
+    },
+    {
+        "nombre": "sofitem",
+        "telefono": "12345",
+        "email":"sofitem@cesurformacion.com",
+        "responsable": "rafael",
+        "observaciones": "buena empresa"
+    },
+    {
+        "nombre": "inerttia",
+        "telefono": "12345",
+        "email":"inerttia@cesurformacion.com",
+        "responsable": "marco",
+        "observaciones": "buena empresa"
+    }
+]
