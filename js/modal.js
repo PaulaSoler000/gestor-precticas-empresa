@@ -1,14 +1,55 @@
-
 $(document).ready(function () {
     $(".btn").click(function () {
       $("#myModal").modal();
     });
+    if ('caches' in window) {
+      // Abrir la caché con el nombre 'my-cache'
+      caches.open('my-cache').then(function(cache) {
+        // Eliminar la caché
+        cache.delete('my-cache').then(function() {
+          console.log('Caché eliminado correctamente');
+        }).catch(function(error) {
+          console.log('Error al eliminar la caché:', error);
+        });
+      });
+    }
   });
+  
+  function eliminarFila(row_id) {
+    // Elimina la fila correspondiente a row_id
+    $(`#row${row_id}`).remove();
+  
+    // Actualiza el array empresas y guarda los datos en localStorage
+    empresas.splice(row_id, 1);
+    localStorage.setItem("empresas", JSON.stringify(empresas));
+  }
+  
+  $(document).on("click", ".delete_button", function() {
+    const row_id = $(this).closest("tr").attr("id").slice(3);
+    eliminarFila(row_id);
+  });
+  
   $(document).ready(function () {
     $("#btn-agregar").click(function () {
       agregarEmpresa();
     });
   });
+  
+  let empresas = [];
+  
+  
+  function eliminarDatos() {
+    // Eliminar los datos de la tabla
+    $("#table-bodydatos").empty();
+  
+    // Limpiar localStorage
+    localStorage.removeItem("empresas");
+  
+    // Asignar un array vacío a la variable empresas
+    empresas = [];
+  }
+  
+  
   
   $(document).ready(function () {
     $('#agregarEmpresaBtn').click(function () {
@@ -77,4 +118,40 @@ $(document).ready(function () {
   
   function delete_row(row_id) {
     document.getElementById(`row${row_id}`).outerHTML = '';
+  }
+  function agregarEmpresa() {
+    // Capturar los valores del formulario
+    var nombre = $('#nombre').val();
+    var telefono = $('#telefono').val();
+    var email = $('#email').val();
+    var responsable = $('#responsable').val();
+    var observaciones = $('#observaciones').val();
+  
+    // Agregar los valores al JSON
+    $.getJSON("https://raw.githubusercontent.com/PaulaSoler000/gestor-precticas-empresa/main/json/empresas.json", function(data) {
+      data.push({
+        "nombre": nombre,
+        "telefono": telefono,
+        "email": email,
+        "responsable": responsable,
+        "observaciones": observaciones
+      });
+  
+      // Actualizar la tabla
+      var row_id = data.length - 1;
+      var row = '<tr id="row' + row_id + '">' +
+        '<td id="nombre_row' + row_id + '">' + nombre + '</td>' +
+        '<td id="telefono_row' + row_id + '">' + telefono + '</td>' +
+        '<td id="email_row' + row_id + '">' + email + '</td>' +
+        '<td id="responsable_row' + row_id + '">' + responsable + '</td>' +
+        '<td id="observaciones_row' + row_id + '">' + observaciones + '</td>' +
+        '<td>' +
+        '<button type="button" style="background-color: black;" id="edit_button' + row_id + '" value="Edit" onclick="edit_row(' + row_id + ')" class="btn btn-link"><i class="bi bi-pencil"></i></button>' +
+        '<button type="button" style="background-color: black;" id="save_button' + row_id + '" value="Save" onclick="save_row(' + row_id + ')" class="btn btn-link"><i class="bi bi-save"></i></button>' +
+        '<button type="button" style="background-color: black;" value="Delete" onclick="delete_row(' + row_id + ')" class="btn btn-link" id="delete_button' + row_id + '"><i class="bi bi-trash"></i></button>' +
+        '</td>' +
+        '</tr>';
+      $('#table-bodydatos').append(row);
+    });
+  
   }
