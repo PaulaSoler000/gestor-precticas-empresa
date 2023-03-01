@@ -82,62 +82,70 @@
                 <span class="dashboard">Información del alumno</span>
             </div>
             <div class="profile-details">
-                <span class="admin_name">¡ HOLA nombre del alumno !</span>
+                <span class="admin_name" id="nombreUser"></span>
             </div>
         </nav>
 
         <div class="home-content">        
             <div class="conteiner">
-                <div class="top-sales">
+                <div class="top-alumno">
                     <div class="parent">
                         <div class="div1">
                             <h1>Datos de la cuenta</h1>
                             <br>
-                            <ul class="top-sales-details" style="list-style: none;">
+                            <ul class="top-alumno-details" style="list-style: none;">
                                 <li>
-                                    <span class="product"><b>Nombre:</b></span>
-                                    <span class="price">Paul</span>
+                                    <span class="nombre"><b>Nombre:</b></span>
+                                    <span id="dato_nombre"></span>
                                 </li>
                                 <li>
-                                    <span class="product"><b>Apellidos:</b></span>
-                                    <span class="price">Martinez Guerrero</span>
-                                </li>
-
-                                <li>
-                                    <span class="product"><b>DNI:</b></span>
-                                    <span class="price">66406345Q</span>
+                                    <span class="apellidos"><b>Apellidos:</b></span>
+                                    <span id="dato_apellidos"></span>
                                 </li>
 
                                 <li>
-                                    <span class="product"><b>Fecha de nacimiento:</b></span>
-                                    <span class="price">6/7/2002</span>
+                                    <span class="dni"><b>DNI:</b></span>
+                                    <span id="dato_dni"></span>
                                 </li>
 
                                 <li>
-                                    <span class="product"><b>Email:</b></span>
-                                    <span class="price">Paul.s248953@cesurformacion.com</span>
+                                    <span class="fecha_nacimiento"><b>Fecha de nacimiento:</b></span>
+                                    <span id="dato_nacimiento"></span>
                                 </li>
 
                                 <li>
-                                    <span class="product"><b>Teléfono de contacto:</b></span>
-                                    <span class="price">602 23 24 56</span>
+                                    <span class="email"><b>Email:</b></span>
+                                    <span id="dato_email"></span>
+                                </li>
+
+                                <li>
+                                    <span class="tef"><b>Teléfono de contacto:</b></span>
+                                    <span id="dato_tef"></span>
                                 </li>
         
                                 <li>
-                                    <span class="product"><b>Empresa:</b></span>
-                                    <span class="price">Accenture</span>
+                                    <span class="empresa"><b>Empresa:</b></span>
+                                    <span id="dato_empresa"></span>
                                 </li>
                                 <li>
-                                    <span class="product"><b>Profesor tutor:</b></span>
-                                    <span class="price">Aaron Blanco</span>
+                                    <span class="profesor"><b>Profesor tutor:</b></span>
+                                    <span id="dato_profesor"></span>
                                 </li>
                                 <li>
-                                    <span class="product"><b>Nº de horas totales para realizar en DUAL:</b></span>
-                                    <span class="price">982h</span>
+                                    <span class="horasDual"><b>Nº de horas totales  en DUAL:</b></span>
+                                    <span id="dato_horasDual"></span>
                                 </li>
                                 <li>
-                                    <span class="product"><b>Nº de horas totales para realizar en FCT:</b></span>
-                                    <span class="price">382h</span>
+                                    <span class="horasFCT"><b>Nº de horas totales en FCT:</b></span>
+                                    <span id="dato_horasFCT"></span>
+                                </li>
+                                <li>
+                                    <span class="horasDualRestante"><b>Nº de horas restantes en DUAL:</b></span>
+                                    <span id="dato_horasDualRestante"></span>
+                                </li>
+                                <li>
+                                    <span class="horasFCTRestante"><b>Nº de horas restantes en FCT:</b></span>
+                                    <span id="dato_horasFCTRestante"></span>
                                 </li>
                             </ul>
                         </div>
@@ -149,6 +157,6 @@
         </div>
     </section>
 
-    <script src="js/app.js"></script>
+    <script src="js/fichaalumno.js"></script>
 </body>
 </html>

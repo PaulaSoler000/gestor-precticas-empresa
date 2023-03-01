@@ -19,9 +19,6 @@
     text-align: center;
     font-size: 2em;
     }
-    #check {
-        cursor: pointer;
-    }
 </style>
 <body>
     <div class="sidebar">
@@ -69,7 +66,7 @@
 
         <div class="home-content">        
             <div id="wrapper">
-                <h1>Control de seguimiento</h1>
+                <h1>Control de seguiento</h1>
                 <table id="data_table">
                     <thead>
                         <tr>
@@ -86,13 +83,12 @@
                     <tbody>
                         <template id="fila">
                         <tr id="fila">
-                            <td scope="row" id="cambiarDatosFecha" class="fecha">1</td>
-                            <td class="dual" id="cambiarDatosDual"></td>
-                            <td class="horas" id="cambiarDatosHoras"></td>
-                            <td class="actividad" id="cambiarDatosAct"></td>
-                            <td class="observaciones" id="cambiarDatosObs"></td>
-                            <td onclick="editarContenido()" class ="botones"></td>
-                            <td onclick="confirmarContenido()" id="check">✔️</td>
+                            <td scope="row" class="fecha">1</td>
+                            <td class="dual"></td>
+                            <td class="horas"></td>
+                            <td class="actividad"></td>
+                            <td class="observaciones"></td>
+                            <td class ="botones"></td>
                         </tr>
                         </template>
                     </tbody>
@@ -114,7 +110,7 @@
                 <div class="modal-body">
                   
                   
-                    <form action="#" id="formtabla" class="form">
+                    <form action="#" class="form">
                         <div class="row g-3">
                         <div class="form-group col-md-4">
                           <label for="name">Fecha *</label>
@@ -159,6 +155,6 @@
 
     </section>
 
-    <script src="js/app.js"></script>
+    <script src="js/SeguimientoAlumno.js"></script>
 </body>
 </html>
