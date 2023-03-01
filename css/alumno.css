@@ -242,67 +242,55 @@ nav .profile-details i{
   border-radius: 12px;
   margin: -15px 0 0 6px;
 }
-.home-content .box .cart.two{
-   color: #2BD47D;
-   background: #C0F2D8;
- }
-.home-content .box .cart.three{
-   color: #ffc233;
-   background: #ffe8b3;
- }
-.home-content .box .cart.four{
-   color: #e05260;
-   background: #f7d4d7;
- }
 .home-content .total-order{
   font-size: 20px;
   font-weight: 500;
 }
-.home-content .sales-boxes{
+.home-content .activity-boxes{
   display: flex;
   justify-content: space-between;
   /* padding: 0 20px; */
 }
 
-.home-content .sales-boxes .recent-sales{
+.home-content .activity-boxes .recent-activity{
   width: 85%;
   background: #fff;
+  text-align: center;
   padding: 20px 30px;
   margin: 0 20px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.home-content .sales-boxes .sales-details{
+.home-content .activity-boxes .activity-details{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.sales-boxes .box .title{
-  font-size: 24px;
-  font-weight: 500;
-}
-.sales-boxes .sales-details li.topic{
+.activity-boxes .box .title{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
 }
-.sales-boxes .sales-details li{
+.activity-boxes .activity-details li.topic{
+  font-size: 15px;
+  font-weight: 600;
+}
+.activity-boxes .activity-details li{
   list-style: none;
   margin: 8px 0;
-  text-align: center;
 }
-.sales-boxes .sales-details li a{
-  font-size: 18px;
+.activity-boxes .activity-details li a{
+  font-size: 15px;
   color: #333;
-  font-size: 400;
+  font-size: 200;
   text-decoration: none;
 }
-.sales-boxes .box .button{
+.activity-boxes .box .button{
   width: 100%;
   display: inline-flex;
   justify-content: flex-end;
   margin-top: 10px;
 }
-.sales-boxes .box .button a{
+.activity-boxes .box .button a{
   color: #fff;
   background: #9c27b0;
   padding: 4px 12px;
@@ -312,11 +300,11 @@ nav .profile-details i{
   text-decoration: none;
   transition: all 0.3s ease;
 }
-.sales-boxes .box .button a:hover{
+.activity-boxes .box .button a:hover{
   background:  #740d86;
 }
 
-.home-content .sales-boxes .top-sales{
+.home-content .activity-boxes .top-alumno{
   width: 35%;
   background: #fff;
   padding: 20px 30px;
@@ -324,13 +312,13 @@ nav .profile-details i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.sales-boxes .top-sales li{
+.activity-boxes .top-alumno li{
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px 0;
 }
-.sales-boxes .top-sales li a img{
+.activity-boxes .top-alumno li a img{
   height: 40px;
   width: 40px;
   object-fit: cover;
@@ -338,13 +326,12 @@ nav .profile-details i{
   margin-right: 10px;
   background: #333;
 }
-.sales-boxes .top-sales li a{
+.activity-boxes .top-alumno li a{
   display: flex;
   align-items: center;
   text-decoration: none;
 }
-.sales-boxes .top-sales li .product,
-.price{
+.activity-boxes .top-alumno li span{
   font-size: 17px;
   font-weight: 400;
   color: #333;
@@ -374,15 +361,15 @@ nav .profile-details i{
   }
 }
 @media (max-width: 1150px) {
-  .home-content .sales-boxes{
+  .home-content .activity-boxes{
     flex-direction: column;
   }
-  .home-content .sales-boxes .box{
+  .home-content .activity-boxes .box{
     width: 100%;
     overflow-x: scroll;
     margin-bottom: 30px;
   }
-  .home-content .sales-boxes .top-sales{
+  .home-content .activity-boxes .top-alumno{
     margin: 0;
   }
 }
@@ -402,7 +389,7 @@ nav .profile-details i{
     height: 50px;
     min-width: 40px;
   }
-  .home-content .sales-boxes .sales-details{
+  .home-content .activity-boxes .activity-details{
     width: 560px;
   }
 }

@@ -1,0 +1,80 @@
+[
+    {
+      "id":"0",
+       "nombre":"Paula",
+       "apellido":"Soler Pino",
+       "correo":"paulaSP@gmail.com",
+       "contraseña":"12345",
+       "dni":"12345678F",
+       "fecha":"28/6/2002",
+       "telefono":"123456789",
+       "empresa":"Accenture",
+       "profesor":"Aaron",
+       "dual":"",
+       "fct":"",
+       "observaciones":"",
+       "actividades":[
+        {
+            "fecha": "12/11/2022",
+            "dual": "Dual",
+            "horas": "5",
+            "actividad": "Index HTML",
+            "observaciones": "Actividad fácil de hacer"
+        },
+        {
+            "fecha": "13/11/2022",
+            "dual": "FCT",
+            "horas": "6",
+            "actividad": "CSS",
+            "observaciones": "Actividad fácil de hacer"
+        },
+        {
+            "fecha": "14/11/2022",
+            "dual": "Dual",
+            "horas": "6",
+            "actividad": "JavaScript",
+            "observaciones": "Actividad fácil de hacer"
+        }
+          
+       ]
+    }, 
+    {
+      "id":"1",
+       "nombre":"Alejandro",
+       "apellido":"Marin Bermudez",
+       "correo":"alejandroMB@gmail.com",
+       "contraseña":"12345",
+       "dni":"12345678F",
+       "fecha":"14/3/2000",
+       "telefono":"123456789",
+       "empresa":"NTT",
+       "profesor":"Aaron",
+       "dual":"",
+       "fct":"",
+       "observaciones":"",
+       "actividades":[
+          
+        {
+            "fecha": "12/11/2022",
+            "dual": "FCT",
+            "horas": "5",
+            "actividad": "Index HTML",
+            "observaciones": "Actividad dificil de hacer"
+        },
+        {
+            "fecha": "13/11/2022",
+            "dual": "FCT",
+            "horas": "2",
+            "actividad": "JSON",
+            "observaciones": "Actividad fácil de hacer"
+        },
+        {
+            "fecha": "16/11/2022",
+            "dual": "Dual",
+            "horas": "8",
+            "actividad": "JavaScript",
+            "observaciones": "Actividad fácil de hacer"
+        }
+       ]
+    }
+ ]

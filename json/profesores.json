@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Francisco",
+        "apellido": "Romero Guillén",
+        "contraseña": "12345",
+        "correo": "francisco@gmail.com"
+    },
+    {
+        "nombre": "Aaron ",
+        "apellido": "Blanco Alvarez",
+        "contraseña": "12345",
+        "correo": "aaron@gmail.com"
+    }
+  ]
